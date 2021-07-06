@@ -6,10 +6,10 @@
   "keywords": [],
   "dependencies": {
     "@sailshq/lodash": "^3.10.3",
+    "node-xlsx": "^0.16.1",
     "sails": "^1.4.3",
     "sails-hook-orm": "^3.0.2",
-    "sails-hook-sockets": "^2.0.0",
-    "xlsx": "^0.17.0"
+    "sails-hook-sockets": "^2.0.0"
   },
   "devDependencies": {
     "eslint": "5.16.0"
@@ -18,7 +18,8 @@
     "start": "NODE_ENV=production node app.js",
     "test": "npm run lint && npm run custom-tests && echo 'Done.'",
     "lint": "./node_modules/eslint/bin/eslint.js . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
-    "custom-tests": "echo \"(No other custom tests yet.)\" && echo"
+    "custom-tests": "echo \"(No other custom tests yet.)\" && echo",
+    "nodemon": "nodemon -w api -w config"
   },
   "main": "app.js",
   "repository": {
