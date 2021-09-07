@@ -11,7 +11,8 @@
     "sails": "^1.4.3",
     "sails-hook-orm": "^3.0.2",
     "sails-hook-sockets": "^2.0.0",
-    "sails-mongo": "^2.0.0"
+    "sails-mongo": "^2.0.0",
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "chai": "^4.3.4",

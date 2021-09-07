@@ -28,12 +28,12 @@ module.exports = {
 
   fn: async function(inputs,exits) {
     let xlsx = require('node-xlsx').default;
-    console.log('Opening File..'.brightMagenta);
+    sails.log.info('Opening File..'.brightMagenta);
     const start = process.hrtime();
     const worksheet = xlsx.parse(inputs.file);
-    console.log('  Records: '.bold + (worksheet[0].data.length-1));
+    sails.log.info('  Records: '.bold + (worksheet[0].data.length-1));
     let end = process.hrtime(start);
-    console.log('  Time: '.bold + end[0] + 's ' + (end[1] / 1000000) + 'ms');
+    sails.log.info('  Time: '.bold + end[0] + 's ' + (end[1] / 1000000) + 'ms');
     return exits.success(worksheet);
   }
 
