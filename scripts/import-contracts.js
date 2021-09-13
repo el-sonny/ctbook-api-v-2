@@ -14,10 +14,10 @@ module.exports = {
     const dictionary = require(sails.config.appPath + '/source_docs/contract-dictionary.json');
     console.log('Processing Contracts'.bold.yellow);
     
-    //const sources = ['update-example-0', 'update-example-1', 'update-example-3', 'test-sample-sub', 'test-sample', 'test-sample-2014'];
-    //const worksheet = await sails.helpers.loadXlsx('source_docs/' + sources[inputs.year] + '.xlsx');
+    const sources = ['update-example-0', 'update-example-1', 'update-example-3', 'test-sample-sub', 'test-sample', 'test-sample-2014'];
+    const worksheet = await sails.helpers.loadXlsx('source_docs/' + sources[inputs.year] + '.xlsx');
     
-    const worksheet = await sails.helpers.loadXlsx('source_docs/contracts-'+inputs.year+'.xlsx');
+    //const worksheet = await sails.helpers.loadXlsx('source_docs/contracts-'+inputs.year+'.xlsx');
     const contracts = await sails.helpers.serializeWorksheet(worksheet, dictionary);
     
     // Process and Save Contractor info

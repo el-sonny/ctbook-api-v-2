@@ -21,7 +21,7 @@ module.exports = {
     },
   },
   fn: async function(inputs,exits) {
-    console.log('Serializing data..'.brightMagenta);
+    sails.log.info('Serializing data..'.brightMagenta);
     const start = process.hrtime();
     const data = inputs.worksheet[0].data;
     const header = data.shift();
@@ -35,8 +35,8 @@ module.exports = {
       return Object.fromEntries(entries);
     });
     let end = process.hrtime(start);
-    console.log('  Records: '.bold + serialized.length);
-    console.log('  Time: '.bold + end[0] + 's ' + (end[1] / 1000000) + 'ms');
+    sails.log.info('  Records: '.bold + serialized.length);
+    sails.log.info('  Time: '.bold + end[0] + 's ' + (end[1] / 1000000) + 'ms');
     return exits.success(serialized);
   }
 };
